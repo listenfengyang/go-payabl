@@ -61,6 +61,7 @@ type PayablDepositCallbackReq struct {
 	Status               string `json:"3dstatus" form:"3dstatus" mapstructure:"3dstatus"`                                              // 请求状态：VERIFIED=成功 400=请求失败
 	Timestamp            string `json:"timestamp" form:"timestamp" mapstructure:"timestamp"`                                           // 时间戳
 	OrderId              string `json:"orderid" form:"orderid" mapstructure:"orderid"`                                                 // 订单ID
+	Amount               string `json:"amount" form:"amount" mapstructure:"amount"`                                                    // 金额
 	ErrorCode            string `json:"errorcode" form:"errorcode" mapstructure:"errorcode"`                                           // 错误码
 	Type                 string `json:"type" form:"type" mapstructure:"type"`                                                          // 类型
 	RelatedTokenIds      string `json:"related_token_ids" form:"related_token_ids" mapstructure:"related_token_ids"`                   // 相关tokenID

@@ -51,13 +51,12 @@ func TestCallback(t *testing.T) {
 	cli.logger.Infof("resp:%+v\n", backReq)
 }
 
-// 3dstatus=VERIFIED&timestamp=1722343778&orderid=ORDER-00005&errorcode=0&type=capture&related_token_ids=&
-// errormessage=&3dauthentication_flow=challenge_flow&3dProtocolVersion=2.2.0&transactionid=105937169&
-// 3dauthentication_status=Y&security=4f77617275d09fe3f13a74d52f6900b1bd124eb52fb0b9fa99c78a0969179057
+// payment_method=1&type=capture&errormessage=&currency=EUR&amount=1.69&errorcode=0&security=5508c9364d229902488131089c67080a92f4b578b95fa9e7ca547e7a5cda3790&orderid=202601271015460906&related_token_ids=216093531&transactionid=216093531&timestamp=1769501801
 func GenCallbackRequestDemo() string {
-	return `{"3dstatus":"VERIFIED","timestamp":"1722343778",
-	"orderid":"ORDER-00005","errorcode":"0","type":"capture","related_token_ids":"",
-	"errormessage":"","3dauthentication_flow":"challenge_flow","3dProtocolVersion":"2.2.0",
-	"transactionid":"105937169","3dauthentication_status":"Y","security":"4f77617275d09fe3f13a74d52f6900b1bd124eb52fb0b9fa99c78a0969179057"}`
+	return `{"payment_method":"1","type":"capture",
+	"errormessage":"","currency":"EUR","amount":"1.69","errorcode":"0",
+	"security":"5508c9364d229902488131089c67080a92f4b578b95fa9e7ca547e7a5cda3790",
+	"orderid":"202601271015460906","related_token_ids":"216093531",
+	"transactionid":"216093531","timestamp":"1769501801"}`
 
 }
