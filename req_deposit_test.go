@@ -18,7 +18,7 @@ func TestDeposit(t *testing.T) {
 	//发请求
 	resp, err := cli.Deposit(GenDepositRequestDemo())
 	if err != nil {
-		cli.logger.Errorf("err:%s\n", err.Error())
+		cli.logger.Errorf("err433:%s\n", err.Error())
 		return
 	}
 	cli.logger.Infof("resp:%+v\n", resp)

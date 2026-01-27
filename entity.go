@@ -48,12 +48,12 @@ type PayablDepositReq struct {
 }
 
 type PayablDepositRsp struct {
-	ErrorCode     string `json:"errorcode" mapstructure:"errorcode"`         //错误码
-	ErrorMessage  string `json:"errormessage" mapstructure:"errormessage"`   //错误信息
-	SessionId     string `json:"sessionid" mapstructure:"sessionid"`         //会话ID
-	TransactionId string `json:"transactionid" mapstructure:"transactionid"` //交易ID
-	UserId        string `json:"user_id" mapstructure:"user_id"`             //用户ID
-	StartUrl      string `json:"start_url" mapstructure:"start_url"`         //跳转三方收银URL
+	ErrorCode     string `json:"errorcode" form:"errorcode" mapstructure:"errorcode"`             //错误码
+	ErrorMessage  string `json:"errormessage" form:"errormessage" mapstructure:"errormessage"`    //错误信息
+	SessionId     string `json:"sessionid" form:"sessionid" mapstructure:"sessionid"`             //会话ID
+	TransactionId string `json:"transactionid" form:"transactionid" mapstructure:"transactionid"` //交易ID
+	UserId        string `json:"user_id" form:"user_id" mapstructure:"user_id"`                   //用户ID
+	StartUrl      string `json:"start_url" form:"start_url" mapstructure:"start_url"`             //跳转三方收银URL
 }
 
 // 入金回调
