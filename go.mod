@@ -1,4 +1,4 @@
-module github.com/listenfengyang/go_payabl
+module github.com/listenfengyang/go-payabl
 
 go 1.24.2
 

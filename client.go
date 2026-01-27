@@ -2,7 +2,7 @@ package go_payabl
 
 import (
 	"github.com/go-resty/resty/v2"
-	"github.com/listenfengyang/go_payabl/utils"
+	"github.com/listenfengyang/go-payabl/utils"
 )
 
 type Client struct {

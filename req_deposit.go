@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	jsoniter "github.com/json-iterator/go"
-	"github.com/listenfengyang/go_payabl/utils"
+	"github.com/listenfengyang/go-payabl/utils"
 	"github.com/mitchellh/mapstructure"
 	"github.com/spf13/cast"
 )

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/listenfengyang/go_payabl/utils"
+	"github.com/listenfengyang/go-payabl/utils"
 	"github.com/mitchellh/mapstructure"
 )
 
