@@ -23,15 +23,25 @@ func TestWithdraw(t *testing.T) {
 	cli.logger.Infof("resp:%+v\n", resp)
 }
 
+// merchantid=gateway_test&amount=1.42&currency=EUR&payment_method=1&
+// signature=c13564a46bd1cd5296177c9b7b37471b8f41d0db&ccn=5546989999990033&
+// cardholder_name=Max Mustermann&exp_month=07&exp_year=2020
 func GenWithdrawRequestDemo() PayablWithdrawReq {
 	return PayablWithdrawReq{
 		Currency:       "EUR",
 		PaymentMethod:  "1", // 1=信用卡
 		Amount:         "1.42",
-		Ccn:            "5546989999990033",
-		ExpMonth:       "07",
-		ExpYear:        "2020",
+		Ccn:            "4149011500000147",
+		ExpMonth:       "01",
+		ExpYear:        "2026",
 		CardholderName: "Max Mustermann",
 		// TransactionId:  "20230824152000001",
 	}
+
+	// return PayablWithdrawReq{
+	// 	Currency:      "EUR",
+	// 	PaymentMethod: "1", // 1=信用卡
+	// 	Amount:        "1.42",
+	// 	TransactionId: "216093621",
+	// }
 }

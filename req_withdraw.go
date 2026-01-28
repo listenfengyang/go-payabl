@@ -3,6 +3,7 @@ package go_payabl
 import (
 	"crypto/tls"
 	"fmt"
+	"net/url"
 
 	jsoniter "github.com/json-iterator/go"
 	"github.com/listenfengyang/go-payabl/utils"
@@ -51,10 +52,18 @@ func (cli *Client) WithdrawReq(req PayablWithdrawReq) (*PayablWithdrawRsp, error
 		return nil, fmt.Errorf("status code: %d", resp2.StatusCode())
 	}
 
-	if resp2.Error() != nil {
-		//反序列化错误会在此捕捉
-		return nil, fmt.Errorf("%v, body:%s", resp2.Error(), resp2.Body())
+	values, err := url.ParseQuery(resp2.String())
+	if err != nil {
+		return nil, fmt.Errorf("resp parse error: %w", err)
 	}
+
+	result.Status = values.Get("status")
+	result.ErrorMessage = values.Get("errormessage")
+	result.TransactionId = values.Get("transactionid")
+	result.Amount = values.Get("amount")
+	result.Price = values.Get("price")
+	result.Currency = values.Get("currency")
+	result.OrderId = values.Get("orderid")
 
 	return &result, nil
 }
