@@ -84,7 +84,7 @@ type PayablWithdrawReq struct {
 	ExpMonth       string `json:"exp_month" form:"exp_month" mapstructure:"exp_month"`                   // 过期月
 	ExpYear        string `json:"exp_year" form:"exp_year" mapstructure:"exp_year"`                      // 过期年
 	CardholderName string `json:"cardholder_name" form:"cardholder_name" mapstructure:"cardholder_name"` // 持卡人姓名
-	TransactionId  string `json:"transactionid" form:"transactionid" mapstructure:"transactionid"`       // 出金订单号
+	OrderId        string `json:"orderid" mapstructure:"orderid"`                                        // 出金订单号
 }
 
 type PayablWithdrawRsp struct {
