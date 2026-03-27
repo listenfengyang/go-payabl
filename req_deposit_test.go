@@ -26,13 +26,21 @@ func TestDeposit(t *testing.T) {
 
 func GenDepositRequestDemo() PayablDepositReq {
 	return PayablDepositReq{
-		Currency:   "EUR",
-		OrderId:    "22515161369",
-		Amount:     "188000.00",
-		Gender:     "M",
-		FirstName:  "John",
-		LastName:   "Doe",
-		Email:      "john.doe@example.com",
-		CustomerIp: "123.456.789.0",
+		//Currency:   "EUR",
+		//OrderId:    "22515161369",
+		//Amount:     "188000.00",
+		//Gender:     "M",
+		//FirstName:  "John",
+		//LastName:   "Doe",
+		//Email:      "john.doe@example.com",
+		//CustomerIp: "123.456.789.0",
+		Amount:     "2020.00",
+		Currency:   "AED",
+		CustomerIp: "10.17.24.157",
+		Email:      "ahmad7mohammadj@gmail.com",
+		FirstName:  "Ahmad Mohammad Abdulla Mohammad",
+		LastName:   "Aljaasmi",
+		Gender:     "",
+		OrderId:    "202603242034560382",
 	}
 }

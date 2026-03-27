@@ -1,13 +1,15 @@
 package go_payabl
 
 type PayablInitParams struct {
-	MerchantID       string `json:"merchantID" mapstructure:"merchantID" config:"merchantID"  yaml:"merchantID"`                         // merchantID
-	NotificationURL  string `json:"notificationURL" mapstructure:"notificationURL" config:"notificationURL"  yaml:"notificationURL"`     // 通知URL
-	ReturnURL        string `json:"returnURL" mapstructure:"returnURL" config:"returnURL"  yaml:"returnURL"`                             // 重定向URL
-	DepositURL       string `json:"depositURL" mapstructure:"depositURL" config:"depositURL"  yaml:"depositURL"`                         // 入金URL
-	WithdrawURL      string `json:"withdrawURL" mapstructure:"withdrawURL" config:"withdrawURL"  yaml:"withdrawURL"`                     // 出金URL
-	WithdrawNotifURL string `json:"withdrawNotifURL" mapstructure:"withdrawNotifURL" config:"withdrawNotifURL"  yaml:"withdrawNotifURL"` // 出金回调URL
-	Secret           string `json:"secret" mapstructure:"secret" config:"secret"  yaml:"secret"`                                         // 密钥
+	MerchantID            string `json:"merchantID" mapstructure:"merchantID" config:"merchantID"  yaml:"merchantID"`                                             // merchantID
+	NotificationURL       string `json:"notificationURL" mapstructure:"notificationURL" config:"notificationURL"  yaml:"notificationURL"`                         // 通知URL
+	ReturnURL             string `json:"returnURL" mapstructure:"returnURL" config:"returnURL"  yaml:"returnURL"`                                                 // 重定向URL
+	DepositURL            string `json:"depositURL" mapstructure:"depositURL" config:"depositURL"  yaml:"depositURL"`                                             // 入金URL
+	WithdrawURL           string `json:"withdrawURL" mapstructure:"withdrawURL" config:"withdrawURL"  yaml:"withdrawURL"`                                         // 出金URL
+	WithdrawNotifURL      string `json:"withdrawNotifURL" mapstructure:"withdrawNotifURL" config:"withdrawNotifURL"  yaml:"withdrawNotifURL"`                     // 出金回调URL
+	Secret                string `json:"secret" mapstructure:"secret" config:"secret"  yaml:"secret"`                                                             // 密钥
+	GetSessionIdUrl       string `json:"getSessionIdUrl" mapstructure:"getSessionIdUrl" config:"getSessionIdUrl"  yaml:"getSessionIdUrl"`                         // 请求获取sessionid地址
+	MobileGetSessionIdUrl string `json:"mobileGetSessionIdUrl" mapstructure:"mobileGetSessionIdUrl" config:"mobileGetSessionIdUrl"  yaml:"mobileGetSessionIdUrl"` // 移动端请求获取sessionid地址
 
 	// MerchantInfo `yaml:",inline" mapstructure:",squash"`
 
@@ -118,4 +120,46 @@ type PayablWithdrawCallbackReq struct {
 type ZPayWithdrawCallbackRsp struct {
 	Status  int32  `json:"status" mapstructure:"status"` //请求状态：200=请求成功 400=请求失败
 	Message string `json:"message" mapstructure:"message"`
+}
+
+// 获取sessionid
+type GetSessionIdReq struct {
+	Merchantid string `json:"merchantid" mapstructure:"merchantid"`
+	Amount     string `json:"amount" mapstructure:"amount"`
+	Currency   string `json:"currency" mapstructure:"currency"`
+	ShopUrl    string `json:"shop_url" mapstructure:"shop_url"`
+	Firstname  string `json:"firstname" mapstructure:"firstname"`
+	Lastname   string `json:"lastname" mapstructure:"lastname"`
+	Signature  string `json:"signature" mapstructure:"signature"`
+	Email      string `json:"email" mapstructure:"email"`
+	Customerip string `json:"customerip" mapstructure:"customerip"`
+}
+
+type GetSessionIdRsp struct {
+	ErrorCode     string `json:"errorcode" form:"errorcode" mapstructure:"errorcode"` //错误码
+	OrderId       string `json:"orderid" form:"orderid" mapstructure:"orderid"`
+	SessionId     string `json:"sessionid" form:"sessionid" mapstructure:"sessionid"`             //会话ID
+	TransactionId string `json:"transactionid" form:"transactionid" mapstructure:"transactionid"` //交易ID
+	Signature     string `json:"signature" mapstructure:"signature"`
+}
+
+// 移动端获取sessionid
+type MobileGetSessionIdReq struct {
+	Merchantid      string `json:"merchant_id" mapstructure:"merchant_id"`
+	Amount          string `json:"amount" mapstructure:"amount"`
+	Currency        string `json:"currency" mapstructure:"currency"`
+	Signature       string `json:"signature" mapstructure:"signature"`
+	Email           string `json:"email" mapstructure:"email"`
+	AppBundleId     string `json:"app_bundle_id" mapstructure:"app_bundle_id"`
+	NotificationUrl string `json:"notification_url" mapstructure:"notification_url"`
+	OrderId         string `json:"order_id" mapstructure:"order_id"`
+}
+
+type MobileGetSessionIdRsp struct {
+	SessionId     string `json:"sessionid" form:"sessionid" mapstructure:"sessionid"`                //会话ID
+	EphemeralKey  string `json:"ephemeral_key" form:"ephemeral_key" mapstructure:"ephemeral_key"`    //交易ID
+	Status        string `json:"status" mapstructure:"status"`                                       // 0=成功 -1=失败
+	TransactionId string `json:"transaction_id" form:"transaction_id" mapstructure:"transaction_id"` //交易ID
+	ErrorCode     string `json:"errorcode" form:"errorcode" mapstructure:"errorcode"`
+	ErrorMessage  string `json:"errormessage" form:"errormessage" mapstructure:"errormessage"`
 }
