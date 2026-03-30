@@ -27,10 +27,12 @@ func TestMobileGetSessionIdTest(t *testing.T) {
 
 func GenMobileGetSessionIdRequestDemo() MobileGetSessionIdReq {
 	return MobileGetSessionIdReq{
-		Amount:      "45",
-		Currency:    "EUR",
-		OrderId:     "2025664646790",
-		AppBundleId: "338as7df61l32k0a9ufdag9659as8dff", // 安卓：com.logtec.cpt  ios: com.cptmarkets.x
-		Email:       "ji4253@gmail.com",
+		Amount:   "42",
+		Currency: "EUR",
+		OrderId:  "20263753253266",
+		// Merchantid:  "merchant_user_test",
+		// Signature:   "1a29075414d8061aa1e9ef6eb4f20a69dc0f2f36",
+		AppBundleId: "com.logtec.cpt", // 安卓：com.logtec.cpt  ios: com.cptmarkets.x
+		Email:       "ajsf@gmail.com",
 	}
 }

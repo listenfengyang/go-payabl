@@ -136,7 +136,8 @@ type GetSessionIdReq struct {
 }
 
 type GetSessionIdRsp struct {
-	ErrorCode     string `json:"errorcode" form:"errorcode" mapstructure:"errorcode"` //错误码
+	ErrorCode     string `json:"errorcode" form:"errorcode" mapstructure:"errorcode"`          //错误码
+	ErrorMessage  string `json:"errormessage" form:"errormessage" mapstructure:"errormessage"` //错误信息
 	OrderId       string `json:"orderid" form:"orderid" mapstructure:"orderid"`
 	SessionId     string `json:"sessionid" form:"sessionid" mapstructure:"sessionid"`             //会话ID
 	TransactionId string `json:"transactionid" form:"transactionid" mapstructure:"transactionid"` //交易ID
@@ -145,14 +146,14 @@ type GetSessionIdRsp struct {
 
 // 移动端获取sessionid
 type MobileGetSessionIdReq struct {
-	Merchantid      string `json:"merchant_id" mapstructure:"merchant_id"`
-	Amount          string `json:"amount" mapstructure:"amount"`
-	Currency        string `json:"currency" mapstructure:"currency"`
-	Signature       string `json:"signature" mapstructure:"signature"`
-	Email           string `json:"email" mapstructure:"email"`
-	AppBundleId     string `json:"app_bundle_id" mapstructure:"app_bundle_id"`
-	NotificationUrl string `json:"notification_url" mapstructure:"notification_url"`
-	OrderId         string `json:"order_id" mapstructure:"order_id"`
+	Merchantid  string `json:"merchant_id" mapstructure:"merchant_id"`
+	Amount      string `json:"amount" mapstructure:"amount"`
+	Currency    string `json:"currency" mapstructure:"currency"`
+	Signature   string `json:"signature" mapstructure:"signature"`
+	Email       string `json:"email" mapstructure:"email"`
+	AppBundleId string `json:"app_bundle_id" mapstructure:"app_bundle_id"`
+	// NotificationUrl string `json:"notification_url" mapstructure:"notification_url"`
+	OrderId string `json:"order_id" mapstructure:"order_id"`
 }
 
 type MobileGetSessionIdRsp struct {
