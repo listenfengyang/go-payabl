@@ -139,7 +139,7 @@ type GetSessionIdRsp struct {
 	ErrorCode     string `json:"errorcode" form:"errorcode" mapstructure:"errorcode"`          //错误码
 	ErrorMessage  string `json:"errormessage" form:"errormessage" mapstructure:"errormessage"` //错误信息
 	OrderId       string `json:"orderid" form:"orderid" mapstructure:"orderid"`
-	SessionId     string `json:"sessionid" form:"sessionid" mapstructure:"sessionid"`             //会话ID
+	SessionId     string `json:"session_id" form:"session_id" mapstructure:"session_id"`          //会话ID
 	TransactionId string `json:"transactionid" form:"transactionid" mapstructure:"transactionid"` //交易ID
 	Signature     string `json:"signature" mapstructure:"signature"`
 }

@@ -63,8 +63,9 @@ func (cli *Client) GetSessionId(req GetSessionIdReq) (*GetSessionIdRsp, error) {
 	}
 
 	result.ErrorCode = values.Get("errorcode")
+	result.ErrorMessage = values.Get("errormessage")
 	result.OrderId = values.Get("orderid")
-	result.SessionId = values.Get("sessionid")
+	result.SessionId = values.Get("session_id")
 	result.Signature = values.Get("signature")
 	result.TransactionId = values.Get("transactionid")
 

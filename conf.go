@@ -15,7 +15,7 @@ const (
 	NOTIFICATION_URL = "https://api-test.logtec.dev/fapi/payment/psp/public/payabl/deposit"
 	//"https://api.cptmarkets.com/fapi/cpti/payment/psp/public/payabl/deposit/back"
 	//"https://api-test.logtec.dev/fapi/payment/psp/public/payabl/deposit"
-	RETURN_URL = "" //"https://portal.cptmarkets.com"
+	RETURN_URL = "https://intluc-test.logtec.dev/zh/deposit" //"https://portal.cptmarkets.com"
 
 	// 获取sessionid
 	GET_SESSION_ID_URL = "https://pay4.sandbox.payabl.com/pay/payment/get_payment_widget_session"
