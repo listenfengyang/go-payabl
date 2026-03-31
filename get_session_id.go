@@ -23,7 +23,6 @@ func (cli *Client) GetSessionId(req GetSessionIdReq) (*GetSessionIdRsp, error) {
 	params["merchantid"] = cast.ToString(cli.Params.MerchantID)
 	params["amount"] = req.Amount
 	params["currency"] = req.Currency
-	params["shop_url"] = cli.Params.ReturnURL
 	params["firstname"] = req.Firstname
 	params["lastname"] = req.Lastname
 	params["email"] = req.Email
