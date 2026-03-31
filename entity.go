@@ -157,7 +157,7 @@ type MobileGetSessionIdReq struct {
 }
 
 type MobileGetSessionIdRsp struct {
-	SessionId     string `json:"sessionid" form:"sessionid" mapstructure:"sessionid"`                //会话ID
+	SessionId     string `json:"session_id" form:"session_id" mapstructure:"session_id"`             //会话ID
 	EphemeralKey  string `json:"ephemeral_key" form:"ephemeral_key" mapstructure:"ephemeral_key"`    //交易ID
 	Status        string `json:"status" mapstructure:"status"`                                       // 0=成功 -1=失败
 	TransactionId string `json:"transaction_id" form:"transaction_id" mapstructure:"transaction_id"` //交易ID

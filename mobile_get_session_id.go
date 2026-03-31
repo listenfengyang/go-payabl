@@ -20,7 +20,7 @@ func (cli *Client) MobileGetSessionId(req MobileGetSessionIdReq) (*MobileGetSess
 	mapstructure.Decode(req, &params)
 
 	//补充字段
-	params["merchant_id"] = cast.ToString(cli.Params.MerchantID)
+	params["merchantid"] = cast.ToString(cli.Params.MerchantID)
 	params["amount"] = req.Amount
 	params["currency"] = req.Currency
 	params["email"] = req.Email
@@ -63,8 +63,8 @@ func (cli *Client) MobileGetSessionId(req MobileGetSessionIdReq) (*MobileGetSess
 
 	result.Status = values.Get("status")
 	result.EphemeralKey = values.Get("ephemeral_key")
-	result.SessionId = values.Get("sessionid")
-	result.TransactionId = values.Get("transactionid")
+	result.SessionId = values.Get("session_id")
+	result.TransactionId = values.Get("transaction_id")
 	result.ErrorCode = values.Get("errorcode")
 	result.ErrorMessage = values.Get("errormessage")
 
