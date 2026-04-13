@@ -146,7 +146,7 @@ type GetSessionIdRsp struct {
 
 // 移动端获取sessionid
 type MobileGetSessionIdReq struct {
-	Merchantid  string `json:"merchant_id" mapstructure:"merchant_id"`
+	Merchantid  string `json:"merchantid" mapstructure:"merchantid"`
 	Amount      string `json:"amount" mapstructure:"amount"`
 	Currency    string `json:"currency" mapstructure:"currency"`
 	Signature   string `json:"signature" mapstructure:"signature"`
