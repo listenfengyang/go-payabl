@@ -2,12 +2,14 @@ package go_payabl
 
 type PayablInitParams struct {
 	MerchantID            string `json:"merchantID" mapstructure:"merchantID" config:"merchantID"  yaml:"merchantID"`                                             // merchantID
+	Secret                string `json:"secret" mapstructure:"secret" config:"secret"  yaml:"secret"`                                                             // 密钥
+	ApplePayMerchantID    string `json:"applePayMerchantID" mapstructure:"applePayMerchantID" config:"applePayMerchantID"  yaml:"applePayMerchantID"`             // apple pay merchantID
+	ApplePaySecret        string `json:"applePaySecret" mapstructure:"applePaySecret" config:"applePaySecret"  yaml:"applePaySecret"`                             // apple pay secret
 	NotificationURL       string `json:"notificationURL" mapstructure:"notificationURL" config:"notificationURL"  yaml:"notificationURL"`                         // 通知URL
 	ReturnURL             string `json:"returnURL" mapstructure:"returnURL" config:"returnURL"  yaml:"returnURL"`                                                 // 重定向URL
 	DepositURL            string `json:"depositURL" mapstructure:"depositURL" config:"depositURL"  yaml:"depositURL"`                                             // 入金URL
 	WithdrawURL           string `json:"withdrawURL" mapstructure:"withdrawURL" config:"withdrawURL"  yaml:"withdrawURL"`                                         // 出金URL
 	WithdrawNotifURL      string `json:"withdrawNotifURL" mapstructure:"withdrawNotifURL" config:"withdrawNotifURL"  yaml:"withdrawNotifURL"`                     // 出金回调URL
-	Secret                string `json:"secret" mapstructure:"secret" config:"secret"  yaml:"secret"`                                                             // 密钥
 	GetSessionIdUrl       string `json:"getSessionIdUrl" mapstructure:"getSessionIdUrl" config:"getSessionIdUrl"  yaml:"getSessionIdUrl"`                         // 请求获取sessionid地址
 	MobileGetSessionIdUrl string `json:"mobileGetSessionIdUrl" mapstructure:"mobileGetSessionIdUrl" config:"mobileGetSessionIdUrl"  yaml:"mobileGetSessionIdUrl"` // 移动端请求获取sessionid地址
 

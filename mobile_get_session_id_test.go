@@ -14,10 +14,13 @@ func TestMobileGetSessionIdTest(t *testing.T) {
 		Secret:                SECRET,
 		DepositURL:            DEPOSIT_URL,
 		MobileGetSessionIdUrl: MOBILE_GET_SESSION_ID_URL,
+		ApplePayMerchantID:    APPLEPAY_MERCHANT_ID,
+		ApplePaySecret:        APPLEPAY_SECRET,
 	})
 
 	//发请求
-	resp, err := cli.MobileGetSessionId(GenMobileGetSessionIdRequestDemo())
+	payType := "apple_pay"
+	resp, err := cli.MobileGetSessionId(payType, GenMobileGetSessionIdRequestDemo())
 	if err != nil {
 		cli.logger.Errorf("err433:%s\n", err.Error())
 		return

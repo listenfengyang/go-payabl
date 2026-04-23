@@ -12,7 +12,7 @@ import (
 )
 
 // sdk 获取sessionid
-func (cli *Client) MobileGetSessionId(req MobileGetSessionIdReq) (*MobileGetSessionIdRsp, error) {
+func (cli *Client) MobileGetSessionId(payType string, req MobileGetSessionIdReq) (*MobileGetSessionIdRsp, error) {
 
 	rawURL := cli.Params.MobileGetSessionIdUrl
 
@@ -21,13 +21,18 @@ func (cli *Client) MobileGetSessionId(req MobileGetSessionIdReq) (*MobileGetSess
 
 	//补充字段
 	params["merchantid"] = cast.ToString(cli.Params.MerchantID)
+	secret := cli.Params.Secret
+	if payType == "apple_pay" {
+		params["merchantid"] = cast.ToString(cli.Params.ApplePayMerchantID)
+		secret = cli.Params.ApplePaySecret
+	}
 	params["amount"] = req.Amount
 	params["currency"] = req.Currency
 	params["email"] = req.Email
 	params["order_id"] = req.OrderId
 	params["app_bundle_id"] = req.AppBundleId
 	params["notification_url"] = cli.Params.NotificationURL
-	signStr, _ := utils.Sign(params, cli.Params.Secret)
+	signStr, _ := utils.Sign(params, secret)
 	params["signature"] = signStr
 	fmt.Println(params)
 
