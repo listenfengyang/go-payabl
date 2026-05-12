@@ -154,6 +154,7 @@ type MobileGetSessionIdReq struct {
 	Signature   string `json:"signature" mapstructure:"signature"`
 	Email       string `json:"email" mapstructure:"email"`
 	AppBundleId string `json:"app_bundle_id" mapstructure:"app_bundle_id"`
+	Country     string `json:"country" mapstructure:"country"`
 	// NotificationUrl string `json:"notification_url" mapstructure:"notification_url"`
 	OrderId string `json:"order_id" mapstructure:"order_id"`
 }

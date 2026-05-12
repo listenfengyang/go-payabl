@@ -2,10 +2,10 @@ package go_payabl
 
 import (
 	"crypto/tls"
+	"encoding/json"
 	"fmt"
 	"net/url"
 
-	jsoniter "github.com/json-iterator/go"
 	"github.com/listenfengyang/go-payabl/utils"
 	"github.com/mitchellh/mapstructure"
 	"github.com/spf13/cast"
@@ -30,6 +30,7 @@ func (cli *Client) MobileGetSessionId(payType string, req MobileGetSessionIdReq)
 	params["currency"] = req.Currency
 	params["email"] = req.Email
 	params["order_id"] = req.OrderId
+	params["country"] = req.Country
 	params["app_bundle_id"] = req.AppBundleId
 	params["notification_url"] = cli.Params.NotificationURL
 	signStr, _ := utils.Sign(params, secret)
@@ -49,8 +50,15 @@ func (cli *Client) MobileGetSessionId(payType string, req MobileGetSessionIdReq)
 		SetError(&result).
 		Post(rawURL)
 
-	restLog, _ := jsoniter.ConfigCompatibleWithStandardLibrary.Marshal(utils.GetRestyLog(resp2))
-	cli.logger.Infof("PSPResty#payabl#mobileGetSessionId->%s", string(restLog))
+	// restLog, _ := jsoniter.ConfigCompatibleWithStandardLibrary.Marshal(utils.GetRestyLog(resp2))
+	// cli.logger.Infof("PSPResty#payabl#mobileGetSessionId->%s", string(restLog))
+
+	prettyLog, err := json.MarshalIndent(utils.GetRestyLog(resp2), "", "  ")
+	if err != nil {
+		cli.logger.Infof("PSPResty#payabl#mobileGetSessionId marshal log failed: %v", err)
+	} else {
+		cli.logger.Infof("PSPResty#payabl#mobileGetSessionId:\n%s", prettyLog)
+	}
 
 	if err != nil {
 		return nil, err

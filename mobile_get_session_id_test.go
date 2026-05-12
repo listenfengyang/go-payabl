@@ -37,5 +37,6 @@ func GenMobileGetSessionIdRequestDemo() MobileGetSessionIdReq {
 		// Signature:   "1a29075414d8061aa1e9ef6eb4f20a69dc0f2f36",
 		AppBundleId: "com.logtec.cpt", // 安卓：com.logtec.cpt  ios: com.cptmarkets.x
 		Email:       "ajsf@gmail.com",
+		Country:     "DEU",
 	}
 }
