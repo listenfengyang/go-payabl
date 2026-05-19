@@ -25,6 +25,9 @@ func (cli *Client) MobileGetSessionId(payType string, req MobileGetSessionIdReq)
 	if payType == "apple_pay" {
 		params["merchantid"] = cast.ToString(cli.Params.ApplePayMerchantID)
 		secret = cli.Params.ApplePaySecret
+	} else if payType == "google_pay" {
+		params["merchantid"] = cast.ToString(cli.Params.GooglePayMerchantID)
+		secret = cli.Params.GooglePaySecret
 	}
 	params["amount"] = req.Amount
 	params["currency"] = req.Currency

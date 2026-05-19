@@ -5,7 +5,7 @@ type PayablInitParams struct {
 	Secret                string `json:"secret" mapstructure:"secret" config:"secret"  yaml:"secret"`                                                             // 密钥
 	ApplePayMerchantID    string `json:"applePayMerchantID" mapstructure:"applePayMerchantID" config:"applePayMerchantID"  yaml:"applePayMerchantID"`             // apple pay merchantID
 	ApplePaySecret        string `json:"applePaySecret" mapstructure:"applePaySecret" config:"applePaySecret"  yaml:"applePaySecret"`                             // apple pay secret
-	GooglePayMerchantId   string `json:"googlePayMerchantId" mapstructure:"googlePayMerchantId" config:"googlePayMerchantId"  yaml:"googlePayMerchantId"`         // google pay merchantID
+	GooglePayMerchantID   string `json:"googlePayMerchantID" mapstructure:"googlePayMerchantID" config:"googlePayMerchantID"  yaml:"googlePayMerchantID"`         // google pay merchantID
 	GooglePaySecret       string `json:"googlePaySecret" mapstructure:"googlePaySecret" config:"googlePaySecret"  yaml:"googlePaySecret"`                         // google pay secret
 	NotificationURL       string `json:"notificationURL" mapstructure:"notificationURL" config:"notificationURL"  yaml:"notificationURL"`                         // 通知URL
 	ReturnURL             string `json:"returnURL" mapstructure:"returnURL" config:"returnURL"  yaml:"returnURL"`                                                 // 重定向URL

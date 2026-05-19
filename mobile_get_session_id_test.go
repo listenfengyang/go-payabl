@@ -16,7 +16,7 @@ func TestMobileGetSessionIdTest(t *testing.T) {
 		MobileGetSessionIdUrl: MOBILE_GET_SESSION_ID_URL,
 		ApplePayMerchantID:    APPLEPAY_MERCHANT_ID,
 		ApplePaySecret:        APPLEPAY_SECRET,
-		GooglePayMerchantId:   GOOGLEPAY_MERCHANT_ID,
+		GooglePayMerchantID:   GOOGLEPAY_MERCHANT_ID,
 		GooglePaySecret:       GOOGLEPAY_SECRET,
 	})
 
