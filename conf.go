@@ -13,6 +13,9 @@ const (
 	APPLEPAY_MERCHANT_ID = "4875433888e8a56afda1121d081ddc63a13cebfe"
 	APPLEPAY_SECRET      = "h7KlAKC6O1"
 
+	GOOGLEPAY_MERCHANT_ID = "4875433888e8a56afda1121d081ddc63a13cebfe"
+	GOOGLEPAY_SECRET      = "h7KlAKC6O1"
+
 	// "95e24f0e29c1e074abcf049c28ae1cde3d0adc67"
 	// MERCHANT_ID = "gateway_test_3d"
 	// MERCHANT_ID = "gateway_test_cb"

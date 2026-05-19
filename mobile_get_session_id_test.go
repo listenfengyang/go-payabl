@@ -16,6 +16,8 @@ func TestMobileGetSessionIdTest(t *testing.T) {
 		MobileGetSessionIdUrl: MOBILE_GET_SESSION_ID_URL,
 		ApplePayMerchantID:    APPLEPAY_MERCHANT_ID,
 		ApplePaySecret:        APPLEPAY_SECRET,
+		GooglePayMerchantId:   GOOGLEPAY_MERCHANT_ID,
+		GooglePaySecret:       GOOGLEPAY_SECRET,
 	})
 
 	//发请求
@@ -37,6 +39,6 @@ func GenMobileGetSessionIdRequestDemo() MobileGetSessionIdReq {
 		// Signature:   "1a29075414d8061aa1e9ef6eb4f20a69dc0f2f36",
 		AppBundleId: "com.logtec.cpt", // 安卓：com.logtec.cpt  ios: com.cptmarkets.x
 		Email:       "ajsf@gmail.com",
-		Country:     "DEU",
+		Country:     "USD",
 	}
 }
