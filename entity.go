@@ -159,6 +159,12 @@ type MobileGetSessionIdReq struct {
 	Country     string `json:"country" mapstructure:"country"`
 	// NotificationUrl string `json:"notification_url" mapstructure:"notification_url"`
 	OrderId string `json:"order_id" mapstructure:"order_id"`
+	// 以下是即时转账所需参数
+	UrlSuccess      string `json:"url_success" mapstructure:"url_success"`           // 付款成功后重定向。
+	UrlFailed       string `json:"url_failed" mapstructure:"url_failed"`             // 付款失败或取消后重定向。
+	UrlReturn       string `json:"url_return" mapstructure:"url_return"`             // 通用重定向 URL。
+	NotificationUrl string `json:"notification_url" mapstructure:"notification_url"` // 服务器到服务器的 webhook 用于最终确认。
+	AppSchema       string `json:"app_schema" mapstructure:"app_schema"`             // 深度链接所需的自定义 URL 方案（例如，“payabl”、“yourapp”）。如果未指定，后端可能会报错。此值应与 AndroidManifest 深度链接配置中的 android:scheme 匹配。
 }
 
 type MobileGetSessionIdRsp struct {

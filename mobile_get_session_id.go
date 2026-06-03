@@ -35,6 +35,13 @@ func (cli *Client) MobileGetSessionId(payType string, req MobileGetSessionIdReq)
 	params["order_id"] = req.OrderId
 	params["country"] = req.Country
 	params["app_bundle_id"] = req.AppBundleId
+
+	params["url_success"] = cli.Params.ReturnURL
+	params["url_failed"] = cli.Params.ReturnURL
+	params["url_return"] = cli.Params.ReturnURL
+	params["notification_url"] = cli.Params.NotificationURL
+	params["app_schema"] = "payabl"
+
 	params["notification_url"] = cli.Params.NotificationURL
 	signStr, _ := utils.Sign(params, secret)
 	params["signature"] = signStr
