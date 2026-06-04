@@ -29,7 +29,7 @@ func TestMobileGetSessionIdTest(t *testing.T) {
 	}
 	cli.logger.Infof("resp:%+v\n", resp)
 }
-
+   
 func GenMobileGetSessionIdRequestDemo() MobileGetSessionIdReq {
 	return MobileGetSessionIdReq{
 		Amount:   "42",
