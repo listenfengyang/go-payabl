@@ -36,11 +36,11 @@ func (cli *Client) MobileGetSessionId(payType string, req MobileGetSessionIdReq)
 	params["country"] = req.Country
 	params["app_bundle_id"] = req.AppBundleId
 
-	params["url_success"] = "cptmarkets://payment-callback/failed"
-	params["url_failed"] = "cptmarkets://payment-callback/failed"
-	params["url_return"] = cli.Params.ReturnURL
+	params["url_success"] = "payabl://payment-callback/success"
+	params["url_failed"] = "payabl://payment-callback/failed"
+	params["url_return"] = "https://payabl.com/payment-callback/redirect_response.php"
 	params["notification_url"] = cli.Params.NotificationURL
-	params["app_schema"] = "cptmarkets"
+	params["app_schema"] = "payabl"
 
 	params["notification_url"] = cli.Params.NotificationURL
 	signStr, _ := utils.Sign(params, secret)
