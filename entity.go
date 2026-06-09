@@ -77,6 +77,12 @@ type PayablDepositCallbackReq struct {
 	TransactionId        string `json:"transactionid" form:"transactionid" mapstructure:"transactionid"`                               // 交易ID
 	AuthenticationStatus string `json:"3dauthentication_status" form:"3dauthentication_status" mapstructure:"3dauthentication_status"` // 3D认证状态
 	Security             string `json:"security" form:"security" mapstructure:"security"`                                              // 安全校验
+
+	// 信用卡入金报表所需字段(payabl 回调返回, 不参与签名)
+	Bin        string `json:"bin" form:"bin" mapstructure:"bin"`                      // Card BIN, 卡号前6位
+	CcnFour    string `json:"ccn_four" form:"ccn_four" mapstructure:"ccn_four"`       // 卡号后4位
+	Cardholder string `json:"cardholder" form:"cardholder" mapstructure:"cardholder"` // 持卡人姓名
+	CardType   string `json:"card_type" form:"card_type" mapstructure:"card_type"`    // 卡类型, 如 VISA
 }
 
 // payabl出金
