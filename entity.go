@@ -79,10 +79,12 @@ type PayablDepositCallbackReq struct {
 	Security             string `json:"security" form:"security" mapstructure:"security"`                                              // 安全校验
 
 	// 信用卡入金报表所需字段(payabl 回调返回, 不参与签名)
-	Bin        string `json:"bin" form:"bin" mapstructure:"bin"`                      // Card BIN, 卡号前6位
-	CcnFour    string `json:"ccn_four" form:"ccn_four" mapstructure:"ccn_four"`       // 卡号后4位
-	Cardholder string `json:"cardholder" form:"cardholder" mapstructure:"cardholder"` // 持卡人姓名
-	CardType   string `json:"card_type" form:"card_type" mapstructure:"card_type"`    // 卡类型, 如 VISA
+	Bin     string `json:"bin" form:"bin" mapstructure:"bin"`               // Card BIN, 卡号前6位
+	CcnFour string `json:"ccn_four" form:"ccn_four" mapstructure:"ccn_four"` // 卡号后4位; Apple Pay 时为苹果令牌(token)后4位
+	// CcnFourReal 真实物理卡后4位; 仅 Apple Pay 交易回调才会返回(普通卡交易此字段为空, 用 CcnFour 即真实卡)
+	CcnFourReal string `json:"ccn_four_real" form:"ccn_four_real" mapstructure:"ccn_four_real"`
+	Cardholder  string `json:"cardholder" form:"cardholder" mapstructure:"cardholder"` // 持卡人姓名
+	CardType    string `json:"card_type" form:"card_type" mapstructure:"card_type"`    // 卡类型, 如 VISA
 }
 
 // payabl出金
